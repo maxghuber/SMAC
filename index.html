@@ -40,14 +40,14 @@
 <li>
 <strong>R</strong> is a binary relation interpreted as substitution (point mutation).</li>
 <li>
-<strong>P</strong> is the set of atoms interpreted as amino acids (alanine A, arginine R, etc., including termination *).</li>
+<strong>P</strong> is the set of atoms interpreted as amino acids (alanine A, arginine R, ...).</li>
 <li>
 <strong>V</strong> is a valuation function that maps each atom to a subset of <strong>C</strong>.</li>
 </ul>
 
 <p>The amino acid language <strong>L</strong> is used to describe simple models. The syntax of <strong>L</strong> is given by:</p>
 
-<p>X := p∈<strong>P</strong> | (~X) | (XvX) | (dX)</p>
+<p>X := p∈<strong>P</strong> | (~X) | (X&#8744;X) | (dX)</p>
 
 <p>The semantics of <strong>L</strong> is defined recursively:</p>
 
@@ -57,7 +57,7 @@
 <li>
 <strong>M</strong>,c |= (~X) iff not <strong>M</strong>,c |= X</li>
 <li>
-<strong>M</strong>,c |= (XvY) iff <strong>M</strong>,c |= X or <strong>M</strong>,c |= Y</li>
+<strong>M</strong>,c |= (X&#8744;Y) iff <strong>M</strong>,c |= X or <strong>M</strong>,c |= Y</li>
 <li>
 <strong>M</strong>,c |= (dX) iff ∃c'∈<strong>C</strong> such that cRc' and <strong>M</strong>,c' |= X</li>
 </ul>
