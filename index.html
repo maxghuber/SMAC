@@ -1,60 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <title>SMAC by maxghuber</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>SMAC</title>
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
+    <div class="wrapper">
+      <header>
+        <h1>SMAC</h1>
+        <p>Simple Model Amino acid Checker</p>
+        <p class="view"><a href="https://github.com/maxghuber/SMAC">View the Project on GitHub <small>maxghuber/SMAC</small></a></p>
+        <ul>
+          <li><a href="https://github.com/maxghuber/SMAC/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/maxghuber/SMAC/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/maxghuber/SMAC">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h3>
 
-        <header>
-          <h1>SMAC</h1>
-          <h2>Simple Model Amino acid Checker</h2>
-        </header>
+<p>SMAC is a model checker for the simple model given the basic amino acid language. </p>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/maxghuber/source_v1/zipball/master" id="download-zip" class="button"><span>Source .zip</span></a>
-          <a href="https://github.com/maxghuber/source_v1" id="download-zip" class="button"><span>Windows .zip</span></a>
-        </section>
+<p>The simple model is a quadruple <strong>M</strong> = &lt;<strong>C</strong>,<strong>R</strong>,<strong>P</strong>,<strong>V</strong>&gt; where:</p>
 
-        <hr>
+<ul>
+<li>
+<strong>C</strong> is the set of codons; a codon c∈<strong>C</strong> is represented as a string over {A,C,T,G} such that |c|=3.</li>
+<li>
+<strong>R</strong> is a binary relation interpreted as substitution (point mutation).</li>
+<li>
+<strong>P</strong> is the set of atoms interpreted as amino acids (alanine A, arginine R, etc., including termination *).</li>
+<li>
+<strong>V</strong> is a valuation function that maps each atom to a subset of <strong>C</strong>.</li>
+</ul>
 
-        <section id="main_content">
-	<h3>About</h3>
-         
-	<p>SMAC is a model checker for the simple model given the basic amino acid language.<br>
-		The simple model is a quadruple M = &lt;C,R,P,V&gt; where:
-		
-		
-		. Here C is the set of codons; a codon c&isin;C is represented as a string over {A,C,T,G} such that |c|=3. R is a binary relation interpreted as substitution (point mutation). P is the set of atoms interpreted as amino acids (including termination). V is a function that maps each atom to a subset of C.
-  	</p>	
-	<ul>
-		<li>test</li>
-	</ul>
-		
-	
-	<h3>Contact</h3>
-   
-	<p>maximilian.huber at unige.ch</p>
-        </section>
+<p>The amino acid language <strong>L</strong> is used to describe simple models. The syntax of <strong>L</strong> is given by:</p>
 
-        <footer>
-          SMAC is maintained by <a href="https://github.com/maxghuber">Maximilian Huber</a><br>
-          Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+<p>X := p∈<strong>P</strong> | (~X) | (XvX) | (dX)</p>
 
-        
-      </div>
+<p>The semantics of <strong>L</strong> is defined recursively:</p>
+
+<ul>
+<li>
+<strong>M</strong>,c |= p iff p∈<strong>V</strong>(p)</li>
+<li>
+<strong>M</strong>,c |= (~X) iff not <strong>M</strong>,c |= X</li>
+<li>
+<strong>M</strong>,c |= (XvY) iff <strong>M</strong>,c |= X or <strong>M</strong>,c |= Y</li>
+<li>
+<strong>M</strong>,c |= (dX) iff ∃c'∈<strong>C</strong> such that cRc' and <strong>M</strong>,c' |= X</li>
+</ul>
+
+<p><strong>M</strong> and <strong>L</strong> yield the normal modal logic <strong>KDBC4</strong>.</p>
+
+<h3>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
+
+<p>maximilian.huber AT unige.ch</p>
+      </section>
     </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/maxghuber">maxghuber</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
