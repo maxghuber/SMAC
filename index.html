@@ -1,70 +1,60 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>SMAC by mhindermann</title>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<title>SMAC by mhindermann</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="stylesheets/styles.css">
+		<link rel="stylesheet" href="stylesheets/github-dark.css">
+		<script src="javascripts/scale.fix.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>SMAC</h1>
-        <p>Simple Model Amino acid Checker</p>
-        <p class="view"><a href="https://github.com/mhindermann/SMAC">View the Project on GitHub <small>mhindermann/SMAC</small></a></p>
-        <ul>
-          <li><a href="https://github.com/maxghuber/source_v1/zipball/master">Download <strong>Source</strong></a></li>
-          <li><a href="https://github.com/maxghuber/exe_v1/zipball/master">Download <strong>Windows</strong></a></li>
-          <li><a href="https://github.com/maxghuber/source_v1">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>    
-          <a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h3>
-        <p>SMAC is a model checker for the simple model given the basic amino acid language.</p>
-        
-        <p>The simple model is a quadruple <strong>M</strong> = &lt;<strong>C</strong>,<strong>R</strong>,<strong>P</strong>,<strong>V</strong>&gt; where:</p>
-        <ul>     
-            <li>
-            <strong>C</strong> is the set of codons; a codon c∈<strong>C</strong> is a string over {A,C,T,G} such that |c|=3.</li>
-            <li>
-            <strong>R</strong> is a binary relation interpreted as substitution (point mutation).</li>
-            <li>
-              <strong>P</strong> is the set of atoms interpreted as amino acids (alanine <i>A</i>, arginine <i>R</i>, ...).</li>
-            <li>
-            <strong>V</strong> is a valuation function that maps each atom to a subset of <strong>C</strong>.</li>
-          </ul>
-          <p>The basic amino acid language <strong>L</strong> is used to describe simple models. Syntax:</p>
-          <p style="text-align:center;">X &#8788; p∈<strong>P</strong> | (&#172;X) | (X&#8744;X) | (&#9826;X)</p>
-          <p>Semantics:</p>
-            <ul>
-              <li>
-              <strong>M</strong>,c &#8872; p iff p∈<strong>V</strong>(p)</li>
-              <li>
-              <strong>M</strong>,c &#8872; (&#172;X) iff not <strong>M</strong>,c &#8872; X</li>
-              <li>
-              <strong>M</strong>,c &#8872; (X&#8744;Y) iff <strong>M</strong>,c &#8872; X or <strong>M</strong>,c &#8872; Y</li>
-              <li>
-              <strong>M</strong>,c &#8872; (&#9826;X) iff ∃c'∈<strong>C</strong> such that cRc' and <strong>M</strong>,c' &#8872; X</li>
-            </ul>
-           <p>The normal modal logic KDBC4 in <strong>L</strong> is sound and complete with respect to <strong>M</strong>.</p>
-            <h3>
-            <a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
-            <p>For more on the logic and philosophy of biological modalities <a href="https://orcid.org/0000-0002-9337-4655">contact me</a>.</p>
-            </section>
-            </div>
-
-    <footer>
-      <p>Project maintained by <a href="https://github.com/mhindermann">mhindermann</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-  </body>
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>SMAC</h1>
+				<p>Simple Model Amino acid Checker</p>
+				<p class="view"><a href="https://github.com/mhindermann/SMAC">View the Project on GitHub <small>mhindermann/SMAC</small></a></p>
+				<ul>
+					<li><a href="https://github.com/maxghuber/source_v1/zipball/master">Download <strong>Source</strong></a></li>
+					<li><a href="https://github.com/maxghuber/exe_v1/zipball/master">Download <strong>Windows</strong></a></li>
+					<li><a href="https://github.com/maxghuber/source_v1">View On <strong>GitHub</strong></a></li>
+				</ul>
+			</header>
+			<section>
+				<h3><a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h3>
+				<p>SMAC is a model checker for the simple model given the basic amino acid language.</p>
+				<p>The simple model is a quadruple <strong>M</strong> = &lt;<strong>C</strong>,<strong>R</strong>,<strong>P</strong>,<strong>V</strong>&gt; where:</p>
+				<ul>     
+					<li><strong>C</strong> is the set of codons; a codon c∈<strong>C</strong> is a string over {A,C,T,G} such that |c|=3.</li>
+					<li><strong>R</strong> is a binary relation interpreted as substitution (point mutation).</li>
+					<li><strong>P</strong> is the set of atoms interpreted as amino acids (alanine <i>A</i>, arginine <i>R</i>, ...).</li>
+					<li><strong>V</strong> is a valuation function that maps each atom to a subset of <strong>C</strong>.</li>
+				</ul>
+				<p>The basic amino acid language <strong>L</strong> is used to describe simple models. Syntax:</p>
+				<p style="text-align:center;">X &#8788; p∈<strong>P</strong> | (&#172;X) | (X&#8744;X) | (&#9826;X)</p>
+				<p>Semantics:</p>
+				<ul>
+					<li><strong>M</strong>,c &#8872; p iff p∈<strong>V</strong>(p)</li>
+					<li><strong>M</strong>,c &#8872; (&#172;X) iff not <strong>M</strong>,c &#8872; X</li>
+					<li><strong>M</strong>,c &#8872; (X&#8744;Y) iff <strong>M</strong>,c &#8872; X or <strong>M</strong>,c &#8872; Y</li>
+					<li><strong>M</strong>,c &#8872; (&#9826;X) iff ∃c'∈<strong>C</strong> such that cRc' and <strong>M</strong>,c' &#8872; X</li>
+				</ul>
+				<p>The normal modal logic KDBC4 in <strong>L</strong> is sound and complete with respect to <strong>M</strong>.</p>
+				<h3><a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
+				<p>For more on the logic and philosophy of biological modalities <a href="https://orcid.org/0000-0002-9337-4655">contact me</a>.</p>
+				<h3><a id="publications" class="anchor" href="#publications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Publications</h3>
+				<p>Please cite this if you are mentioning SMAC in a research paper: Hindermann, Maximilian: Biological modalities. Université de Genève. Thèse, 2017. doi: 10.13097/archive-ouverte/unige:93135 <a href="https://archive-ouverte.unige.ch/unige:93135">https://archive-ouverte.unige.ch/unige:93135</a>.</p>
+			</section>
+    </div>
+		<footer>
+			<p>Project maintained by <a href="https://github.com/mhindermann">mhindermann</a></p>
+			<p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+		</footer>
+	</body>
 </html>
